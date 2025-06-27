@@ -1,0 +1,8 @@
+appdirs>=1.4.4
+colorama>=0.4.6
+lancedb>=0.3.0
+litellm>=1.0.0
+numpy>=1.24.0
+pydantic>=2.0.0
+pyarrow>=14.0.0
+sentence-transformers>=2.2.0
