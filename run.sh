@@ -9,12 +9,18 @@ set -e
 export CURRENT_UID=$(id -u)
 export CURRENT_GID=$(id -g)
 
-# Check for docker-compose
-if ! command -v docker-compose &> /dev/null
-then
-    echo "ERROR: docker-compose could not be found. Please install it."
-    exit 1
-fi
 
 echo "Starting PostgreSQL Co-Pilot..."
-docker-compose up --build --remove-orphans
+# Create the data directory and all necessary subdirectories for the container volume
+echo "Creating local data directories..."
+mkdir -p ./data/config
+mkdir -p ./data/memory/feedback
+mkdir -p ./data/memory/insights
+mkdir -p ./data/memory/schema
+mkdir -p ./data/memory/conversation_history
+mkdir -p ./data/memory/lancedb_stores
+mkdir -p ./data/approved_sql
+echo "Pulling latest image..."
+docker pull shivam124/postgres-copilot:latest
+echo "Running container..."
+docker run -it --rm -v "$(pwd)/data":/home/appuser/data -e POSTGRES_COPILOT_DATA_DIR=/home/appuser/data shivam124/postgres-copilot:latest
