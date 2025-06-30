@@ -1,5 +1,24 @@
 # PostgreSQL Co-Pilot
 
+## Quick Start
+
+For a fast setup without cloning the repository, you can download and run the setup script directly:
+
+```bash
+# Download the run script
+curl -L "https://gist.githubusercontent.com/svyas113/75bdc62d82b00be29a7f6f3a291ab0b4/raw" -o run.sh
+
+# Make the script executable
+chmod +x ./run.sh
+
+# Run the script to start the application
+./run.sh
+```
+
+This will pull the latest Docker image and launch the PostgreSQL Co-Pilot. The first time you run it, it will guide you through the necessary configuration.
+
+---
+
 PostgreSQL Co-Pilot is an intelligent assistant designed to help users interact with PostgreSQL databases. It leverages various Large Language Models (LLMs) via LiteLLM (including providers like OpenAI, Google Gemini, Anthropic, AWS Bedrock, DeepSeek, and OpenRouter) to understand natural language queries, generate SQL, process user feedback, and extract valuable insights about database schemas and query patterns. The Co-Pilot aims to streamline database interaction, making it more intuitive and efficient, especially for users who may not be SQL experts.
 
 ## Features
