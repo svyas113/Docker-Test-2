@@ -2,20 +2,31 @@
 
 ## Quick Start
 
-For a fast setup without cloning the repository, you can download and run the setup script directly:
+For a fast setup without cloning the repository, you can download the necessary files and run the application using Docker Compose.
 
-```bash
-# Download the run script
-curl -L "https://gist.githubusercontent.com/svyas113/75bdc62d82b00be29a7f6f3a291ab0b4/raw" -o run.sh
+1.  **Download the required files:**
 
-# Make the script executable
-chmod +x ./run.sh
+    ```bash
+    # Download the run script
+    curl -L "https://gist.githubusercontent.com/svyas113/75bdc62d82b00be29a7f6f3a291ab0b4/raw/run.sh" -o run.sh
 
-# Run the script to start the application
-./run.sh
-```
+    # Download the Docker Compose file
+    curl -L "https://gist.githubusercontent.com/svyas113/75bdc62d82b00be29a7f6f3a291ab0b4/raw/docker-compose.yml" -o docker-compose.yml
+    ```
 
-This will pull the latest Docker image and launch the PostgreSQL Co-Pilot. The first time you run it, it will guide you through the necessary configuration.
+2.  **Make the script executable:**
+
+    ```bash
+    chmod +x ./run.sh
+    ```
+
+3.  **Run the application:**
+
+    ```bash
+    ./run.sh
+    ```
+
+This will use Docker Compose to build the image (if not already present) and launch the PostgreSQL Co-Pilot. The first time you run it, it will guide you through the necessary configuration.
 
 ---
 
