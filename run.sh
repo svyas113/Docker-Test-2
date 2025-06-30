@@ -19,6 +19,7 @@ mkdir -p ./data/memory/insights
 mkdir -p ./data/memory/schema
 mkdir -p ./data/memory/conversation_history
 mkdir -p ./data/memory/lancedb_stores
+mkdir -p ./data/memory/logs
 mkdir -p ./data/approved_sql
 echo "Pulling latest image..."
 docker pull shivam124/postgres-copilot:latest
